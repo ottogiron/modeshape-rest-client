@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.cpus = 2
   end
 
-  config.vm.synced_folder ".", "/ceibacms"
+  config.vm.synced_folder ".", "/home/vagrant/modeshape-rest-client"
   config.vm.hostname = "modeshape.dev"
 
   #Provisioning
