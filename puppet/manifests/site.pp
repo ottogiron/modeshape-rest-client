@@ -1,5 +1,19 @@
 
+class modeshapenode {
 
+  class { 'nodejs':
+    version => 'v0.12.0',
+  }
+
+
+
+  package { 'nodemon':
+    provider => 'npm',
+    require => Class['nodejs']
+  }
+
+
+}
 
 class modeshapejava {
 
@@ -41,6 +55,7 @@ node 'modeshape.dev' {
 
   include modeshapejava
   include modeshapewildfly
+  include modeshapenode
   include git
 
 }
