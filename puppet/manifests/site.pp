@@ -38,7 +38,7 @@ class modeshapejava {
 class modeshapewildfly {
 
   class { 'wildfly::install':
-    require => Class['java'],
+    require => Class['modeshapejava'],
     version        => '8.2.0',
     install_source => 'http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.tar.gz',
     install_file   => 'wildfly-8.2.0.Final.tar.gz',
