@@ -45,6 +45,24 @@ class modeshapewildfly {
     java_home      => '/usr/lib/jvm/java-7-openjdk-amd64',
   }
 
+  package { 'unzip':
+      ensure => installed,
+  }
+
+
+  exec{'download_modeshape':
+      command => '/usr/bin/wget -q http://downloads.jboss.org/modeshape/4.2.0.Final/modeshape-4.2.0.Final-jboss-wf8-dist.zip',
+      creates => '/tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip',
+      require => [Class['wildfly::install'], Package['unzip']]
+      cwd => '/tmp'
+  }
+
+  exec { 'unzip_modeshape':
+      command      => '/usr/bin/unzip /tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip /opt/wildfly',
+      require => Exec['download_modeshape']
+  }
+
+
 }
 
 
