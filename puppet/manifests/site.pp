@@ -58,7 +58,7 @@ class modeshapewildfly {
   }
 
   exec { 'unzip_modeshape':
-      command      => '/usr/bin/unzip /tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip /opt/wildfly',
+      command      => '/usr/bin/unzip /tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip -d /opt/wildfly',
       require => Exec['download_modeshape']
   }
 
