@@ -5,8 +5,6 @@ class modeshapenode {
     version => 'v0.12.0',
   }
 
-
-
   package { 'nodemon':
     provider => 'npm',
     require => Class['nodejs']
@@ -37,36 +35,36 @@ class modeshapejava {
 
 class modeshapewildfly {
 
-
-
-
+  include wget
 
   package { 'unzip':
     ensure => installed,
   }
 
-
-  exec{'download_modeshape':
-    command => '/usr/bin/wget -q http://downloads.jboss.org/modeshape/4.2.0.Final/modeshape-4.2.0.Final-jboss-wf8-dist.zip',
-    creates => '/tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip',
-    require => Package['unzip'],
-    cwd => '/tmp'
-  }
-
-  exec { 'unzip_modeshape':
-    command => '/usr/bin/unzip /tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip -d /opt/wildfly',
-    require => Exec['download_modeshape'],
-    creates => '/tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip'
-  }
-
   class { 'wildfly::install':
-    require        => [Class['modeshapejava'], Exec['unzip_modeshape']],
+    require        => Class['modeshapejava'],
     version        => '8.2.0',
     install_source => 'http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.tar.gz',
     install_file   => 'wildfly-8.2.0.Final.tar.gz',
     java_home      => '/usr/lib/jvm/java-7-openjdk-amd64',
-    config         => 'standalone-modeshape.xml'
+    #config         => 'standalone-modeshape.xml'
   }
+
+  wget::fetch { 'download_modeshape':
+    source      => 'http://downloads.jboss.org/modeshape/4.2.0.Final/modeshape-4.2.0.Final-jboss-wf8-dist.zip',
+    destination => '/tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip',
+    timeout     => 0,
+    verbose     => false,
+    require     => Class['wildfly::install']
+  } ->
+  exec { 'unzip_modeshape':
+    command => '/usr/bin/unzip /tmp/modeshape-4.2.0.Final-jboss-wf8-dist.zip -d /opt/wildfly',
+    creates => '/opt/wildfly/standalone/configuration/standalone-modeshape.xml',
+    require =>  Package['unzip']
+  }
+
+
+
 
 
 }
