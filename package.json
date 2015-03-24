@@ -4,7 +4,7 @@
   "description": "Client for modeshape rest endpoints",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/ottogiron/modeshape-rest-client/issues"
   },
-  "homepage": "https://github.com/ottogiron/modeshape-rest-client"
+  "homepage": "https://github.com/ottogiron/modeshape-rest-client",
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "mocha": "^2.2.1",
+    "nock": "^1.2.1"
+  },
+  "dependencies": {
+    "lodash": "^3.5.0",
+    "wreck": "^5.3.0"
+  }
 }
