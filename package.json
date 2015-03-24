@@ -4,7 +4,7 @@
   "description": "Client for modeshape rest endpoints",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha  --check-leaks"
+    "test": "node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --check-leaks"
   },
   "repository": {
     "type": "git",

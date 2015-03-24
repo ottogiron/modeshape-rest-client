@@ -1,0 +1,48 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/items/test",
+        "body": {
+            "jcr:primaryType": "nt:unstructured",
+            "testProperty": "testValue",
+            "multiValuedProperty": [
+                "value1",
+                "value2"
+            ],
+            "children": {
+                "childNode": {
+                    "nestedProperty": "nestedValue"
+                }
+            }
+        },
+        "status": 201,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b4%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "d94ba544-1233-408c-9e1e-5158952a4ec8",
+            "jcr:primaryType": "nt:unstructured",
+            "multiValuedProperty": [
+                "value1",
+                "value2"
+            ],
+            "testProperty": "testValue",
+            "children": {
+                "childNode": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b4%5d/childNode",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b4%5d",
+                    "id": "ecc6d14b-0c46-4dc4-9b6b-0216eb655045"
+                }
+            }
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "transfer-encoding": "chunked",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Tue, 24 Mar 2015 21:13:36 GMT"
+        }
+    }
+]

@@ -41,7 +41,40 @@ describe('Modeshape available endpoints', function() {
                 result.should.be.an('object');
                 result.should.have.property('workspaces');
                 nockDone();
-                done();                
+                done();
+            });
+        });
+    });
+
+    it('should add a new node given a path', function(done) {
+
+        var nodeToAdd = {
+            "jcr:primaryType":"nt:unstructured",
+            "testProperty":"testValue",
+            "multiValuedProperty":["value1", "value2"],
+            "children":{
+                "childNode":{
+                    "nestedProperty":"nestedValue"
+                }
+            }
+        };
+
+        nockBack('addNode.json', function(nockDone) {
+
+            var path = '/test';
+            client.addNode({
+                    repository: 'sample',
+                    workspace: 'default',
+                    path: path
+                }, nodeToAdd, function(err, result) {
+
+                    result.should.have.be.an('object');
+                    //console.log('Result is:', result);
+                    result.should.have.property('id');
+                    result.should.have.property('multiValuedProperty');
+                    result.multiValuedProperty.should.have.length(2);
+                    nockDone();
+                    done();
             });
         });
     });
