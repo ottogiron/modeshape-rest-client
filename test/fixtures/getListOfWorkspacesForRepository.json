@@ -1,0 +1,29 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "GET",
+        "path": "/modeshape-rest/sample",
+        "body": "",
+        "status": 200,
+        "response": {
+            "workspaces": [
+                {
+                    "name": "default",
+                    "repository": "http://localhost:8080/modeshape-rest/sample",
+                    "items": "http://localhost:8080/modeshape-rest/sample/default/items",
+                    "query": "http://localhost:8080/modeshape-rest/sample/default/query",
+                    "binary": "http://localhost:8080/modeshape-rest/sample/default/binary",
+                    "nodeTypes": "http://localhost:8080/modeshape-rest/sample/default/nodetypes"
+                }
+            ]
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Tue, 24 Mar 2015 02:37:58 GMT"
+        }
+    }
+]
