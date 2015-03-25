@@ -75,6 +75,7 @@
                     "activeSessionsCount": 0,
                     "metadata": {
                         "custom.rep.name": "sample",
+                        "custom.rep.workspace.names": "default",
                         "identifier.stability": "identifier.stability.indefinite.duration",
                         "jcr.repository.name": "ModeShape",
                         "jcr.repository.vendor": "JBoss, a division of Red Hat",
@@ -139,7 +140,7 @@
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-type": "application/json;charset=utf-8",
-            "date": "Tue, 24 Mar 2015 02:02:07 GMT"
+            "date": "Wed, 25 Mar 2015 02:48:10 GMT"
         }
     }
 ]

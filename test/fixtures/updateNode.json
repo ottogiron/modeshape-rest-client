@@ -1,0 +1,37 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "PUT",
+        "path": "/modeshape-rest/sample/default/items/test",
+        "body": {
+            "testProperty": "some_new_value"
+        },
+        "status": 200,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "a7ece097-3900-47b9-8e2a-9212e20aaa09",
+            "jcr:primaryType": "nt:unstructured",
+            "multiValuedProperty": [
+                "value1",
+                "value2"
+            ],
+            "testProperty": "some_new_value",
+            "children": {
+                "childNode": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/test/childNode",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/test",
+                    "id": "29172e2f-ab5f-4a38-9833-9a13b6b7b1ba"
+                }
+            }
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Wed, 25 Mar 2015 02:48:10 GMT"
+        }
+    }
+]

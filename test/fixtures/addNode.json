@@ -18,9 +18,9 @@
         },
         "status": 201,
         "response": {
-            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b4%5d",
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b2%5d",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "d94ba544-1233-408c-9e1e-5158952a4ec8",
+            "id": "44548a1b-9a08-42e5-8257-3cce36f26a6c",
             "jcr:primaryType": "nt:unstructured",
             "multiValuedProperty": [
                 "value1",
@@ -29,20 +29,19 @@
             "testProperty": "testValue",
             "children": {
                 "childNode": {
-                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b4%5d/childNode",
-                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b4%5d",
-                    "id": "ecc6d14b-0c46-4dc4-9b6b-0216eb655045"
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b2%5d/childNode",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b2%5d",
+                    "id": "3a625dd1-6de8-412e-b75d-873af1d0d541"
                 }
             }
         },
         "headers": {
             "expires": "0",
-            "connection": "keep-alive",
+            "connection": "close",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
-            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Tue, 24 Mar 2015 21:13:36 GMT"
+            "date": "Wed, 25 Mar 2015 02:48:10 GMT"
         }
     }
 ]

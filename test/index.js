@@ -6,6 +6,8 @@ nockBack.fixtures = './test/fixtures';
 nockBack.setMode('record');
 
 
+var TEST_REPOSITORY = 'sample';
+var TEST_WORKSPACE = 'default'
 
 describe('Modeshape available endpoints', function() {
 
@@ -63,18 +65,40 @@ describe('Modeshape available endpoints', function() {
 
             var path = '/test';
             client.addNode({
-                    repository: 'sample',
-                    workspace: 'default',
+                    repository: TEST_REPOSITORY,
+                    workspace: TEST_WORKSPACE,
                     path: path
                 }, nodeToAdd, function(err, result) {
 
-                    result.should.have.be.an('object');
+                    result.should.be.an('object');
                     //console.log('Result is:', result);
                     result.should.have.property('id');
                     result.should.have.property('multiValuedProperty');
                     result.multiValuedProperty.should.have.length(2);
                     nockDone();
                     done();
+            });
+        });
+    });
+
+    it('should update node properties', function(done) {
+
+        var nodeProperties = { "testProperty":"some_new_value" };
+
+        nockBack('updateNode.json', function(nockDone) {
+
+            var path = 'test';
+            client.updateNode({
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: path
+            }, nodeProperties, function(err, result) {
+            //    console.log(result);
+                result.should.be.an('object');
+                result.should.have.property('testProperty');
+                result.testProperty.should.be.equal(nodeProperties.testProperty);
+                nockDone();
+                done();
             });
         });
     });
