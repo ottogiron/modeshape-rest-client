@@ -1,0 +1,62 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/items/testbyidentifier",
+        "body": {
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "status": 201,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b7%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "f57c1d49-bca9-4b23-b333-fae6535dd25d",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Thu, 26 Mar 2015 03:53:01 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "GET",
+        "path": "/modeshape-rest/sample/default/nodes/f57c1d49-bca9-4b23-b333-fae6535dd25d",
+        "body": "",
+        "status": 200,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b7%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "f57c1d49-bca9-4b23-b333-fae6535dd25d",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Thu, 26 Mar 2015 03:53:01 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "DELETE",
+        "path": "/modeshape-rest/sample/default/nodes/f57c1d49-bca9-4b23-b333-fae6535dd25d",
+        "body": "",
+        "status": 204,
+        "response": "",
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-length": "0",
+            "date": "Thu, 26 Mar 2015 03:53:01 GMT"
+        }
+    }
+]

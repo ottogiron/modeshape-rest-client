@@ -1,6 +1,7 @@
 require('chai').should();
 var nockBack = require('nock').back;
 var modeshapeRestClient = require('../');
+var async = require('async');
 
 nockBack.fixtures = './test/fixtures';
 nockBack.setMode('record');
@@ -104,6 +105,7 @@ describe('Modeshape available endpoints', function() {
     });
 
     it('should delete a node', function(done) {
+
         var nodeToAdd = {
             "jcr:primaryType":"nt:unstructured",
             "testProperty":"testValue",
@@ -133,6 +135,55 @@ describe('Modeshape available endpoints', function() {
                     done();
                 });
 
+            });
+        });
+    });
+
+    it('should retrieve a node by its identifier', function(done) {
+
+        nockBack('retrieveByIdentifier.json', function(nockDone) {
+
+            var nodeToAdd = {
+                "jcr:primaryType":"nt:unstructured"
+            };
+
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: '/testbyidentifier'
+            };
+
+            async.waterfall([
+                //create test node
+                function(callback) {
+
+                    client.addNode(options, nodeToAdd, function(err, res) {
+                        callback(err, res)
+                    });
+                },
+                //retrieve node with created node id
+                function(createdNode, callback) {
+
+                    options.id = createdNode.id;
+                    client.getNodeByIdentifier(options, function(err, retrievedNode) {
+                        console.log('Retrieved node', retrievedNode);
+                        retrievedNode.should.be.an('object');
+                        retrievedNode.id.should.be.equal(options.id);
+                        callback(err);
+                    });
+                },
+                //delete created node
+                function(callback) {
+
+                    client.deleteNodeByIdentifier(options, function(err, res) {
+                        callback(err, res);
+                    });
+                }
+            ], function(err, result) {
+
+                result.should.be.empty;
+                nockDone();
+                done();
             });
         });
     });
