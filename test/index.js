@@ -216,4 +216,9 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+
+    it('should update a node by identifier', function(done) {
+        done();
+    });
+
 });
