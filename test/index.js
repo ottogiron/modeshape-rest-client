@@ -82,7 +82,7 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
-    it('should update node properties', function(done) {
+    it('should update node properties by path', function(done) {
 
         var nodeProperties = { "testProperty":"some_new_value" };
 
@@ -104,7 +104,7 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
-    it('should delete a node', function(done) {
+    it('should delete a node by path', function(done) {
 
         var nodeToAdd = {
             "jcr:primaryType":"nt:unstructured",
@@ -139,6 +139,34 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+    it('should delete a node by identifier', function(done) {
+
+        nockBack('delteANodeByIdentifier.json', function(nockDone) {
+
+            var nodeToAdd = {
+                "jcr:primaryType":"nt:unstructured"
+            };
+
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: '/testdeletebyidentifier'
+            };
+
+            client.addNode(options, nodeToAdd, function(err, res) {
+
+                res.should.have.property('id');
+                options.id = res.id;
+                client.deleteNodeByIdentifier(options, function(err, res) {
+
+                    res.should.be.empty;
+                    nockDone();
+                    done();
+                });
+            });
+        });
+    });
+
     it('should retrieve and delete node by identifier', function(done) {
 
         nockBack('retrieveByIdentifier.json', function(nockDone) {
@@ -166,7 +194,7 @@ describe('Modeshape available endpoints', function() {
 
                     options.id = createdNode.id;
                     client.getNodeByIdentifier(options, function(err, retrievedNode) {
-                        console.log('Retrieved node', retrievedNode);
+
                         retrievedNode.should.be.an('object');
                         retrievedNode.id.should.be.equal(options.id);
                         callback(err);
