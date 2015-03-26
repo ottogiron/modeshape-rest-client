@@ -139,7 +139,7 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
-    it('should retrieve a node by its identifier', function(done) {
+    it('should retrieve and delete node by identifier', function(done) {
 
         nockBack('retrieveByIdentifier.json', function(nockDone) {
 
