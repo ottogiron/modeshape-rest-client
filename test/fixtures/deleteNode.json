@@ -1,0 +1,63 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/items/testdelete",
+        "body": {
+            "jcr:primaryType": "nt:unstructured",
+            "testProperty": "testValue",
+            "multiValuedProperty": [
+                "value1",
+                "value2"
+            ],
+            "children": {
+                "childNode": {
+                    "nestedProperty": "nestedValue"
+                }
+            }
+        },
+        "status": 201,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testdelete%5b2%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "352f3ed3-62dc-42f9-bb82-4ce7aa1b314e",
+            "jcr:primaryType": "nt:unstructured",
+            "multiValuedProperty": [
+                "value1",
+                "value2"
+            ],
+            "testProperty": "testValue",
+            "children": {
+                "childNode": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testdelete%5b2%5d/childNode",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/testdelete%5b2%5d",
+                    "id": "abfd5092-f09f-436e-904c-926463ffef5d"
+                }
+            }
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Thu, 26 Mar 2015 02:54:19 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "DELETE",
+        "path": "/modeshape-rest/sample/default/items/testdelete",
+        "body": "",
+        "status": 204,
+        "response": "",
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-length": "0",
+            "date": "Thu, 26 Mar 2015 02:54:19 GMT"
+        }
+    }
+]

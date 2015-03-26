@@ -103,4 +103,38 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+    it('should delete a node', function(done) {
+        var nodeToAdd = {
+            "jcr:primaryType":"nt:unstructured",
+            "testProperty":"testValue",
+            "multiValuedProperty":["value1", "value2"],
+            "children":{
+                "childNode":{
+                    "nestedProperty":"nestedValue"
+                }
+            }
+        };
+
+        nockBack('deleteNode.json', function(nockDone) {
+
+            var path = '/testdelete';
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: path
+            };
+
+            client.addNode(options, nodeToAdd, function(err, result) {
+
+                client.deleteNode(options, function(err, result) {
+
+                    result.should.be.empty;
+                    nockDone();
+                    done();
+                });
+
+            });
+        });
+    });
+
 });
