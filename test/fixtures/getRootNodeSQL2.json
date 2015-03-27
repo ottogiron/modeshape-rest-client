@@ -1,0 +1,39 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/query",
+        "body": "SELECT * FROM [nt:base] WHERE PATH([nt:base]) ='/'",
+        "status": 200,
+        "response": {
+            "columns": {
+                "nt:base.jcr:primaryType": "STRING",
+                "nt:base.jcr:mixinTypes": "STRING",
+                "nt:base.jcr:score": "DOUBLE",
+                "nt:base.mode:depth": "LONG",
+                "nt:base.jcr:path": "STRING",
+                "nt:base.jcr:name": "STRING",
+                "nt:base.mode:localName": "STRING",
+                "nt:base.mode:id": "STRING"
+            },
+            "rows": [
+                {
+                    "nt:base.jcr:primaryType": "mode:root",
+                    "nt:base.jcr:score": "1.0",
+                    "nt:base.mode:depth": "0",
+                    "nt:base.jcr:path": "/",
+                    "nt:base.mode:id": "/",
+                    "mode:uri": "http://localhost:8080/modeshape-rest/sample/default/items/"
+                }
+            ]
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Fri, 27 Mar 2015 02:57:26 GMT"
+        }
+    }
+]

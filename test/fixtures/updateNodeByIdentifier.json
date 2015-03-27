@@ -10,7 +10,7 @@
         "response": {
             "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b8%5d",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "efe561ec-34d7-435b-916c-17542a3194b4",
+            "id": "83ddeb4e-a0e2-44f8-aec2-ef8ecfa72766",
             "jcr:primaryType": "nt:unstructured"
         },
         "headers": {
@@ -19,13 +19,13 @@
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 01:51:48 GMT"
+            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
         }
     },
     {
         "scope": "http://localhost:8080",
         "method": "PUT",
-        "path": "/modeshape-rest/sample/default/nodes/efe561ec-34d7-435b-916c-17542a3194b4",
+        "path": "/modeshape-rest/sample/default/nodes/83ddeb4e-a0e2-44f8-aec2-ef8ecfa72766",
         "body": {
             "testProperty": "Test value"
         },
@@ -33,7 +33,7 @@
         "response": {
             "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b8%5d",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "efe561ec-34d7-435b-916c-17542a3194b4",
+            "id": "83ddeb4e-a0e2-44f8-aec2-ef8ecfa72766",
             "jcr:primaryType": "nt:unstructured",
             "testProperty": "Test value"
         },
@@ -43,13 +43,13 @@
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 01:51:48 GMT"
+            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
         }
     },
     {
         "scope": "http://localhost:8080",
         "method": "DELETE",
-        "path": "/modeshape-rest/sample/default/nodes/efe561ec-34d7-435b-916c-17542a3194b4",
+        "path": "/modeshape-rest/sample/default/nodes/83ddeb4e-a0e2-44f8-aec2-ef8ecfa72766",
         "body": "",
         "status": 204,
         "response": "",
@@ -59,7 +59,7 @@
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-length": "0",
-            "date": "Fri, 27 Mar 2015 01:51:48 GMT"
+            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
         }
     }
 ]

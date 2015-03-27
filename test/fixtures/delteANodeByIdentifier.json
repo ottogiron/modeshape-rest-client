@@ -10,7 +10,7 @@
         "response": {
             "self": "http://localhost:8080/modeshape-rest/sample/default/items/testdeletebyidentifier",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "368b7d15-b790-4038-9bb9-29f3a9bb394c",
+            "id": "5e98e30b-e2e1-43ae-91c5-f5151eba2ac7",
             "jcr:primaryType": "nt:unstructured"
         },
         "headers": {
@@ -19,13 +19,13 @@
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-type": "application/json;charset=utf-8",
-            "date": "Thu, 26 Mar 2015 04:08:39 GMT"
+            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
         }
     },
     {
         "scope": "http://localhost:8080",
         "method": "DELETE",
-        "path": "/modeshape-rest/sample/default/nodes/368b7d15-b790-4038-9bb9-29f3a9bb394c",
+        "path": "/modeshape-rest/sample/default/nodes/5e98e30b-e2e1-43ae-91c5-f5151eba2ac7",
         "body": "",
         "status": 204,
         "response": "",
@@ -35,7 +35,7 @@
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-length": "0",
-            "date": "Thu, 26 Mar 2015 04:08:39 GMT"
+            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
         }
     }
 ]

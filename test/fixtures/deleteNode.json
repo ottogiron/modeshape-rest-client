@@ -20,7 +20,7 @@
         "response": {
             "self": "http://localhost:8080/modeshape-rest/sample/default/items/testdelete%5b2%5d",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "352f3ed3-62dc-42f9-bb82-4ce7aa1b314e",
+            "id": "56976220-7880-4d1c-9d94-44f8759a484d",
             "jcr:primaryType": "nt:unstructured",
             "multiValuedProperty": [
                 "value1",
@@ -31,7 +31,7 @@
                 "childNode": {
                     "self": "http://localhost:8080/modeshape-rest/sample/default/items/testdelete%5b2%5d/childNode",
                     "up": "http://localhost:8080/modeshape-rest/sample/default/items/testdelete%5b2%5d",
-                    "id": "abfd5092-f09f-436e-904c-926463ffef5d"
+                    "id": "6f0bb498-4427-4174-9b50-ae01f6748b3b"
                 }
             }
         },
@@ -41,7 +41,7 @@
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-type": "application/json;charset=utf-8",
-            "date": "Thu, 26 Mar 2015 02:54:19 GMT"
+            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
         }
     },
     {
@@ -57,7 +57,7 @@
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-length": "0",
-            "date": "Thu, 26 Mar 2015 02:54:19 GMT"
+            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
         }
     }
 ]

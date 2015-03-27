@@ -269,4 +269,30 @@ describe('Modeshape available endpoints', function() {
 
     });
 
+
+    it('should return a root node using SQL2 query', function(done) {
+
+        nockBack('getRootNodeSQL2.json', function(nockDone) {
+
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                query: "SELECT * FROM [nt:base] WHERE PATH([nt:base]) ='/'",
+                queryType: 'sql2'
+            };
+
+            client.executeJCRQuery(options, function(err, result) {
+                result.should.have.property('columns');
+                result.should.have.property('rows');
+                result.rows.should.be.an('array');
+                result.rows.should.have.length(1);
+                result.rows[0]['nt:base.jcr:path'].should.be.equal('/');
+                nockDone();
+                done();
+            });
+
+        });
+    });
+
+
 });
