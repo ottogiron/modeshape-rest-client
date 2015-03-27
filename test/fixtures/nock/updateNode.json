@@ -10,7 +10,7 @@
         "response": {
             "self": "http://localhost:8080/modeshape-rest/sample/default/items/test",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "a7ece097-3900-47b9-8e2a-9212e20aaa09",
+            "id": "47597d18-8459-4d51-836b-75b4ae8e0963",
             "jcr:primaryType": "nt:unstructured",
             "multiValuedProperty": [
                 "value1",
@@ -21,17 +21,18 @@
                 "childNode": {
                     "self": "http://localhost:8080/modeshape-rest/sample/default/items/test/childNode",
                     "up": "http://localhost:8080/modeshape-rest/sample/default/items/test",
-                    "id": "29172e2f-ab5f-4a38-9833-9a13b6b7b1ba"
+                    "id": "344eba60-933a-4a36-bc62-10b54224e0b3"
                 }
             }
         },
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
+            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 02:44:14 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:26 GMT"
         }
     }
 ]

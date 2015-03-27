@@ -19,11 +19,12 @@
         },
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
+            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 02:44:14 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:26 GMT"
         }
     }
 ]

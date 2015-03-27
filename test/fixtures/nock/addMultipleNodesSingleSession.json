@@ -37,9 +37,9 @@
         "status": 200,
         "response": [
             {
-                "self": "http://localhost:8080/modeshape-rest/sample/default/items/child%5b2%5d",
+                "self": "http://localhost:8080/modeshape-rest/sample/default/items/child%5b3%5d",
                 "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-                "id": "4c3af814-03b7-41f2-9677-8ad25fc4dfdd",
+                "id": "3e78bcde-0a17-4bee-ab2d-66e5cfda7979",
                 "jcr:primaryType": "nt:unstructured",
                 "multiValuedProperty": [
                     "value1",
@@ -48,9 +48,9 @@
                 "testProperty": "testValue"
             },
             {
-                "self": "http://localhost:8080/modeshape-rest/sample/default/items/child/subChild%5b2%5d",
+                "self": "http://localhost:8080/modeshape-rest/sample/default/items/child/subChild%5b3%5d",
                 "up": "http://localhost:8080/modeshape-rest/sample/default/items/child",
-                "id": "c03c1552-3f74-4110-8f4a-9a73ccc28314",
+                "id": "416cfa59-b6e8-47ba-897f-fea96d87d477",
                 "jcr:primaryType": "nt:unstructured",
                 "multiValuedProperty": [
                     "value1",
@@ -59,9 +59,9 @@
                 "testProperty": "testValue"
             },
             {
-                "self": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b2%5d",
+                "self": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b3%5d",
                 "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-                "id": "9907aa46-3933-4360-b1e6-82bc50568d0b",
+                "id": "1f01d290-e3e5-4612-a222-e893711cdafb",
                 "jcr:primaryType": "nt:unstructured",
                 "multiValuedProperty": [
                     "value1",
@@ -70,9 +70,9 @@
                 "testProperty": "testValue",
                 "children": {
                     "otherSubChild": {
-                        "self": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b2%5d/otherSubChild",
-                        "up": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b2%5d",
-                        "id": "e9e535d6-ea03-43c6-a15b-3f9a43fb8b2b"
+                        "self": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b3%5d/otherSubChild",
+                        "up": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b3%5d",
+                        "id": "eed3defb-6d01-4309-9e4f-55146673b295"
                     }
                 }
             }
@@ -84,7 +84,7 @@
             "pragma": "no-cache",
             "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 15:31:38 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:27 GMT"
         }
     }
 ]

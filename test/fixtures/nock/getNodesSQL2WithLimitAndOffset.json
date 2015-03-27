@@ -21,31 +21,32 @@
                     "nt:base.jcr:primaryType": "nt:unstructured",
                     "nt:base.jcr:score": "1.0",
                     "nt:base.mode:depth": "1",
-                    "nt:base.jcr:path": "/testbyidentifier[7]",
-                    "nt:base.jcr:name": "testbyidentifier",
-                    "nt:base.mode:localName": "testbyidentifier",
-                    "nt:base.mode:id": "4e9ffed3-8187-4358-a40b-4cb7a97b5141",
-                    "mode:uri": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b7%5d"
+                    "nt:base.jcr:path": "/test",
+                    "nt:base.jcr:name": "test",
+                    "nt:base.mode:localName": "test",
+                    "nt:base.mode:id": "47597d18-8459-4d51-836b-75b4ae8e0963",
+                    "mode:uri": "http://localhost:8080/modeshape-rest/sample/default/items/test"
                 },
                 {
                     "nt:base.jcr:primaryType": "nt:unstructured",
                     "nt:base.jcr:score": "1.0",
                     "nt:base.mode:depth": "1",
-                    "nt:base.jcr:path": "/testbyidentifier",
-                    "nt:base.jcr:name": "testbyidentifier",
-                    "nt:base.mode:localName": "testbyidentifier",
-                    "nt:base.mode:id": "147e8ba2-3405-48a6-bbb7-78d3ce502ecc",
-                    "mode:uri": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier"
+                    "nt:base.jcr:path": "/child[2]",
+                    "nt:base.jcr:name": "child",
+                    "nt:base.mode:localName": "child",
+                    "nt:base.mode:id": "4c3af814-03b7-41f2-9677-8ad25fc4dfdd",
+                    "mode:uri": "http://localhost:8080/modeshape-rest/sample/default/items/child%5b2%5d"
                 }
             ]
         },
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
+            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 03:12:53 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:27 GMT"
         }
     }
 ]

@@ -2,64 +2,70 @@
     {
         "scope": "http://localhost:8080",
         "method": "POST",
-        "path": "/modeshape-rest/sample/default/items/testbyidentifier",
+        "path": "/modeshape-rest/sample/default/items/updatemultiple",
         "body": {
             "jcr:primaryType": "nt:unstructured"
         },
         "status": 201,
         "response": {
-            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b8%5d",
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/updatemultiple%5b7%5d",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "83ddeb4e-a0e2-44f8-aec2-ef8ecfa72766",
+            "id": "34c02675-27f0-46cd-b473-f3c46c8a831a",
             "jcr:primaryType": "nt:unstructured"
         },
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
+            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:27 GMT"
         }
     },
     {
         "scope": "http://localhost:8080",
         "method": "PUT",
-        "path": "/modeshape-rest/sample/default/nodes/83ddeb4e-a0e2-44f8-aec2-ef8ecfa72766",
+        "path": "/modeshape-rest/sample/default/items",
         "body": {
-            "testProperty": "Test value"
+            "/updatemultiple": {
+                "testProperty": "updated value"
+            }
         },
         "status": 200,
-        "response": {
-            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b8%5d",
-            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "83ddeb4e-a0e2-44f8-aec2-ef8ecfa72766",
-            "jcr:primaryType": "nt:unstructured",
-            "testProperty": "Test value"
-        },
+        "response": [
+            {
+                "self": "http://localhost:8080/modeshape-rest/sample/default/items/updatemultiple",
+                "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                "id": "f297a72a-7385-4021-9b1f-bae383ec2cf8",
+                "testProperty": "updated value",
+                "jcr:primaryType": "nt:unstructured"
+            }
+        ],
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
+            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:27 GMT"
         }
     },
     {
         "scope": "http://localhost:8080",
         "method": "DELETE",
-        "path": "/modeshape-rest/sample/default/nodes/83ddeb4e-a0e2-44f8-aec2-ef8ecfa72766",
+        "path": "/modeshape-rest/sample/default/nodes/34c02675-27f0-46cd-b473-f3c46c8a831a",
         "body": "",
         "status": 204,
         "response": "",
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-length": "0",
-            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:27 GMT"
         }
     }
 ]

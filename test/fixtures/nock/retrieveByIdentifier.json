@@ -8,55 +8,57 @@
         },
         "status": 201,
         "response": {
-            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b8%5d",
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "5dc36678-399a-4206-bb25-14b458608c13",
+            "id": "26c7c4a9-09f0-48ad-870e-adb09e5b119a",
             "jcr:primaryType": "nt:unstructured"
         },
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
+            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:27 GMT"
         }
     },
     {
         "scope": "http://localhost:8080",
         "method": "GET",
-        "path": "/modeshape-rest/sample/default/nodes/5dc36678-399a-4206-bb25-14b458608c13",
+        "path": "/modeshape-rest/sample/default/nodes/26c7c4a9-09f0-48ad-870e-adb09e5b119a",
         "body": "",
         "status": 200,
         "response": {
-            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b8%5d",
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
-            "id": "5dc36678-399a-4206-bb25-14b458608c13",
+            "id": "26c7c4a9-09f0-48ad-870e-adb09e5b119a",
             "jcr:primaryType": "nt:unstructured"
         },
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
+            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:27 GMT"
         }
     },
     {
         "scope": "http://localhost:8080",
         "method": "DELETE",
-        "path": "/modeshape-rest/sample/default/nodes/5dc36678-399a-4206-bb25-14b458608c13",
+        "path": "/modeshape-rest/sample/default/nodes/26c7c4a9-09f0-48ad-870e-adb09e5b119a",
         "body": "",
         "status": 204,
         "response": "",
         "headers": {
             "expires": "0",
-            "connection": "close",
+            "connection": "keep-alive",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-length": "0",
-            "date": "Fri, 27 Mar 2015 02:44:15 GMT"
+            "date": "Fri, 27 Mar 2015 18:13:27 GMT"
         }
     }
 ]

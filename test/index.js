@@ -3,7 +3,7 @@ var nockBack = require('nock').back;
 var modeshapeRestClient = require('../');
 var async = require('async');
 
-nockBack.fixtures = './test/fixtures';
+nockBack.fixtures = './test/fixtures/nock';
 nockBack.setMode('record');
 
 
