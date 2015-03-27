@@ -1,0 +1,90 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/items",
+        "body": {
+            "/child/subChild": {
+                "jcr:primaryType": "nt:unstructured",
+                "testProperty": "testValue",
+                "multiValuedProperty": [
+                    "value1",
+                    "value2"
+                ]
+            },
+            "/child": {
+                "jcr:primaryType": "nt:unstructured",
+                "testProperty": "testValue",
+                "multiValuedProperty": [
+                    "value1",
+                    "value2"
+                ]
+            },
+            "/otherChild": {
+                "jcr:primaryType": "nt:unstructured",
+                "testProperty": "testValue",
+                "multiValuedProperty": [
+                    "value1",
+                    "value2"
+                ],
+                "children": {
+                    "otherSubChild": {
+                        "nestedProperty": "nestedValue"
+                    }
+                }
+            }
+        },
+        "status": 200,
+        "response": [
+            {
+                "self": "http://localhost:8080/modeshape-rest/sample/default/items/child%5b2%5d",
+                "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                "id": "4c3af814-03b7-41f2-9677-8ad25fc4dfdd",
+                "jcr:primaryType": "nt:unstructured",
+                "multiValuedProperty": [
+                    "value1",
+                    "value2"
+                ],
+                "testProperty": "testValue"
+            },
+            {
+                "self": "http://localhost:8080/modeshape-rest/sample/default/items/child/subChild%5b2%5d",
+                "up": "http://localhost:8080/modeshape-rest/sample/default/items/child",
+                "id": "c03c1552-3f74-4110-8f4a-9a73ccc28314",
+                "jcr:primaryType": "nt:unstructured",
+                "multiValuedProperty": [
+                    "value1",
+                    "value2"
+                ],
+                "testProperty": "testValue"
+            },
+            {
+                "self": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b2%5d",
+                "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                "id": "9907aa46-3933-4360-b1e6-82bc50568d0b",
+                "jcr:primaryType": "nt:unstructured",
+                "multiValuedProperty": [
+                    "value1",
+                    "value2"
+                ],
+                "testProperty": "testValue",
+                "children": {
+                    "otherSubChild": {
+                        "self": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b2%5d/otherSubChild",
+                        "up": "http://localhost:8080/modeshape-rest/sample/default/items/otherChild%5b2%5d",
+                        "id": "e9e535d6-ea03-43c6-a15b-3f9a43fb8b2b"
+                    }
+                }
+            }
+        ],
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "transfer-encoding": "chunked",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Fri, 27 Mar 2015 15:31:38 GMT"
+        }
+    }
+]

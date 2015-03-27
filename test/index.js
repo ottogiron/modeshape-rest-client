@@ -324,4 +324,47 @@ describe('Modeshape available endpoints', function() {
     });
 
 
+    it('should create multiple nodes with a single session', function(done) {
+
+        var nodesToAdd = {
+            "/child/subChild" : {
+                "jcr:primaryType":"nt:unstructured",
+                "testProperty":"testValue",
+                "multiValuedProperty":["value1", "value2"]
+            },
+            "/child" : {
+                "jcr:primaryType":"nt:unstructured",
+                "testProperty":"testValue",
+                "multiValuedProperty":["value1", "value2"]
+            },
+            "/otherChild" : {
+                "jcr:primaryType":"nt:unstructured",
+                "testProperty":"testValue",
+                "multiValuedProperty":["value1", "value2"],
+                "children":{
+                    "otherSubChild":{
+                        "nestedProperty":"nestedValue"
+                    }
+                }
+            }
+        };
+
+        var options = {
+            repository: TEST_REPOSITORY,
+            workspace: TEST_WORKSPACE
+        };
+
+        nockBack('addMultipleNodesSingleSession.json', function(nockDone) {
+
+            client.addMultipleNodes(options, nodesToAdd, function(err, result) {
+
+                result.should.be.an('array');
+                result.should.have.length(3);
+                nockDone();
+                done();
+            });
+        });
+
+    });
+
 });
