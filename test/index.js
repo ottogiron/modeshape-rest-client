@@ -35,6 +35,7 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+
     it('should retrieve a list of workspaces for a repository', function(done) {
 
         nockBack('getListOfWorkspacesForRepository.json', function(nockDone) {
@@ -48,6 +49,7 @@ describe('Modeshape available endpoints', function() {
             });
         });
     });
+
 
     it('should add a new node given a path', function(done) {
 
@@ -104,6 +106,7 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+
     it('should delete a node by path', function(done) {
 
         var nodeToAdd = {
@@ -139,6 +142,7 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+
     it('should delete a node by identifier', function(done) {
 
         nockBack('delteANodeByIdentifier.json', function(nockDone) {
@@ -166,6 +170,7 @@ describe('Modeshape available endpoints', function() {
             });
         });
     });
+
 
     it('should retrieve and delete node by identifier', function(done) {
 
