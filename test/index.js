@@ -218,7 +218,55 @@ describe('Modeshape available endpoints', function() {
 
 
     it('should update a node by identifier', function(done) {
-        done();
+
+        nockBack('updateNodeByIdentifier.json', function(nockDone) {
+            var nodeToAdd = {
+                "jcr:primaryType":"nt:unstructured"
+            };
+
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: '/testbyidentifier'
+            };
+
+            async.waterfall([
+                //create test node
+                function(callback) {
+
+                    client.addNode(options, nodeToAdd, function(err, res) {
+                        callback(err, res)
+                    });
+                },
+                //retrieve node with created node id
+                function(createdNode, callback) {
+
+                    options.id = createdNode.id;
+                    var testProperties = {testProperty: 'Test value'};
+                    client.updateNodeByIdentifier(options, testProperties, function(err, updateResult) {
+
+                        updateResult.should.have.property('testProperty');
+                        updateResult.testProperty.should.be.equal(testProperties.testProperty);
+                        callback(null);
+                    });
+
+                },
+                //delete created node
+                function(callback) {
+
+                    client.deleteNodeByIdentifier(options, function(err, res) {
+                        callback(err, res);
+                    });
+                }
+            ], function(err, result) {
+
+                result.should.be.empty;
+                nockDone();
+                done();
+            });
+
+        });
+
     });
 
 });

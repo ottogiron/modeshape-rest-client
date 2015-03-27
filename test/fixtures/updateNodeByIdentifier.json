@@ -1,0 +1,65 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/items/testbyidentifier",
+        "body": {
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "status": 201,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b8%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "efe561ec-34d7-435b-916c-17542a3194b4",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Fri, 27 Mar 2015 01:51:48 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "PUT",
+        "path": "/modeshape-rest/sample/default/nodes/efe561ec-34d7-435b-916c-17542a3194b4",
+        "body": {
+            "testProperty": "Test value"
+        },
+        "status": 200,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b8%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "efe561ec-34d7-435b-916c-17542a3194b4",
+            "jcr:primaryType": "nt:unstructured",
+            "testProperty": "Test value"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Fri, 27 Mar 2015 01:51:48 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "DELETE",
+        "path": "/modeshape-rest/sample/default/nodes/efe561ec-34d7-435b-916c-17542a3194b4",
+        "body": "",
+        "status": 204,
+        "response": "",
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-length": "0",
+            "date": "Fri, 27 Mar 2015 01:51:48 GMT"
+        }
+    }
+]
