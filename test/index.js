@@ -434,4 +434,24 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+
+    it('it should retrieve a nodetype', function(done) {
+
+        nockBack('getNodeType.json', function(nockDone) {
+            var nodeTypeName = 'nt:base';
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                nodeTypeName: nodeTypeName
+            };
+
+            client.getNodeType(options, function(err, nodeType) {
+
+                nodeType.should.have.property(nodeTypeName);
+                nockDone();
+                done();
+            });
+        });
+    });
+
 });
