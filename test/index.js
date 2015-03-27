@@ -367,4 +367,66 @@ describe('Modeshape available endpoints', function() {
 
     });
 
+
+    it('should update multiple nodes with a single session', function(done) {
+
+        nockBack('updateMutipleNodesSingleSession.json', function(nockDone) {
+
+            var testPath = '/updatemultiple';
+
+            var nodeToAdd = {
+                "jcr:primaryType":"nt:unstructured"
+            };
+
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: testPath
+            };
+
+            async.waterfall([
+                //create test node
+                function(callback) {
+
+                    client.addNode(options, nodeToAdd, function(err, res) {
+                        callback(err, res)
+                    });
+                },
+                //retrieve node with created node id
+                function(createdNode, callback) {
+
+                    var nodesToUpdate = {
+                        "/updatemultiple" : {
+                            "testProperty":"updated value",
+                        }
+                    };
+
+                    options.id = createdNode.id;
+
+                    client.updateMultipleNodes(options, nodesToUpdate, function(err, updateResult) {
+
+                        updateResult.should.be.an('array');
+                        updateResult.should.have.length(1);
+                        updateResult[0].testProperty.should.be.equal(nodesToUpdate[testPath].testProperty);
+                        callback(null);
+                    });
+
+                },
+                //delete created node
+                function(callback) {
+
+                    client.deleteNodeByIdentifier(options, function(err, res) {
+                        callback(err, res);
+                    });
+                }
+            ], function(err, result) {
+
+                result.should.be.empty;
+                nockDone();
+                done();
+            });
+
+        });
+    });
+
 });

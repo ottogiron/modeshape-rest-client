@@ -1,0 +1,71 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/items/updatemultiple",
+        "body": {
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "status": 201,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/updatemultiple%5b7%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "365fbfd5-33bc-407c-91c3-9157be066e91",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "transfer-encoding": "chunked",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Fri, 27 Mar 2015 17:58:01 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "PUT",
+        "path": "/modeshape-rest/sample/default/items",
+        "body": {
+            "/updatemultiple": {
+                "testProperty": "updated value"
+            }
+        },
+        "status": 200,
+        "response": [
+            {
+                "self": "http://localhost:8080/modeshape-rest/sample/default/items/updatemultiple",
+                "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                "id": "f297a72a-7385-4021-9b1f-bae383ec2cf8",
+                "testProperty": "updated value",
+                "jcr:primaryType": "nt:unstructured"
+            }
+        ],
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "transfer-encoding": "chunked",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Fri, 27 Mar 2015 17:58:01 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "DELETE",
+        "path": "/modeshape-rest/sample/default/nodes/365fbfd5-33bc-407c-91c3-9157be066e91",
+        "body": "",
+        "status": 204,
+        "response": "",
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-length": "0",
+            "date": "Fri, 27 Mar 2015 17:58:01 GMT"
+        }
+    }
+]
