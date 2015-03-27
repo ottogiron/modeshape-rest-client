@@ -295,4 +295,33 @@ describe('Modeshape available endpoints', function() {
     });
 
 
+    it('should return SQL2 results with offset and limit', function(done) {
+
+        nockBack('getNodesSQL2WithLimitAndOffset.json', function(nockDone) {
+
+            var limit = 2;
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                query: "SELECT * FROM [nt:base] WHERE isdescendantnode('/')",
+                queryType: 'sql2',
+                filters: {
+                    offset: 1,
+                    limit: limit
+                }
+            };
+
+            client.executeJCRQuery(options, function(err, result) {
+                result.should.have.property('columns');
+                result.should.have.property('rows');
+                result.rows.should.be.an('array');
+                result.rows.should.have.length(limit);
+                nockDone();
+                done();
+            });
+
+        });
+    });
+
+
 });

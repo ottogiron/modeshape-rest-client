@@ -1,0 +1,51 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/query?offset=1&limit=2",
+        "body": "SELECT * FROM [nt:base] WHERE isdescendantnode('/')",
+        "status": 200,
+        "response": {
+            "columns": {
+                "nt:base.jcr:primaryType": "STRING",
+                "nt:base.jcr:mixinTypes": "STRING",
+                "nt:base.jcr:score": "DOUBLE",
+                "nt:base.mode:depth": "LONG",
+                "nt:base.jcr:path": "STRING",
+                "nt:base.jcr:name": "STRING",
+                "nt:base.mode:localName": "STRING",
+                "nt:base.mode:id": "STRING"
+            },
+            "rows": [
+                {
+                    "nt:base.jcr:primaryType": "nt:unstructured",
+                    "nt:base.jcr:score": "1.0",
+                    "nt:base.mode:depth": "1",
+                    "nt:base.jcr:path": "/testbyidentifier[7]",
+                    "nt:base.jcr:name": "testbyidentifier",
+                    "nt:base.mode:localName": "testbyidentifier",
+                    "nt:base.mode:id": "4e9ffed3-8187-4358-a40b-4cb7a97b5141",
+                    "mode:uri": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b7%5d"
+                },
+                {
+                    "nt:base.jcr:primaryType": "nt:unstructured",
+                    "nt:base.jcr:score": "1.0",
+                    "nt:base.mode:depth": "1",
+                    "nt:base.jcr:path": "/testbyidentifier",
+                    "nt:base.jcr:name": "testbyidentifier",
+                    "nt:base.mode:localName": "testbyidentifier",
+                    "nt:base.mode:id": "147e8ba2-3405-48a6-bbb7-78d3ce502ecc",
+                    "mode:uri": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier"
+                }
+            ]
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Fri, 27 Mar 2015 03:12:53 GMT"
+        }
+    }
+]
