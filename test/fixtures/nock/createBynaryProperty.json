@@ -1,0 +1,61 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/items/testbinary",
+        "body": {
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "status": 201,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test/items/testbinary%5b12%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/test/items/",
+            "id": "2c584c44-eb82-4df8-8734-346c8258d1c7",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Mon, 30 Mar 2015 04:24:15 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/binary/testbinary/binaryProperty",
+        "body": "hello binary\n",
+        "status": 200,
+        "response": {
+            "binaryProperty": "http://localhost:8080/modeshape-rest/sample/default/binary/testbinary/binaryProperty",
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary/binaryProperty",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Mon, 30 Mar 2015 04:24:15 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "DELETE",
+        "path": "/modeshape-rest/sample/default/nodes/2c584c44-eb82-4df8-8734-346c8258d1c7",
+        "body": "",
+        "status": 204,
+        "response": "",
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-length": "0",
+            "date": "Mon, 30 Mar 2015 04:24:15 GMT"
+        }
+    }
+]

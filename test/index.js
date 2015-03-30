@@ -2,6 +2,7 @@ require('chai').should();
 var nockBack = require('nock').back;
 var modeshapeRestClient = require('../');
 var async = require('async');
+var fs = require('fs');
 
 nockBack.fixtures = './test/fixtures/nock';
 nockBack.setMode('record');
@@ -435,6 +436,7 @@ describe('Modeshape available endpoints', function() {
     });
 
 
+
     it('it should retrieve a nodetype', function(done) {
 
         nockBack('getNodeType.json', function(nockDone) {
@@ -452,6 +454,66 @@ describe('Modeshape available endpoints', function() {
                 done();
             });
         });
+    });
+
+
+    it('it should create a new binary property', function(done) {
+
+        nockBack('createBynaryProperty.json', function(nockDone) {
+
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: '/testbinary'
+            };
+
+            var nodeToAdd = {
+                "jcr:primaryType":"nt:unstructured"
+            };
+
+
+
+
+            async.waterfall([
+                function(callback){
+
+                    client.addNode(options, nodeToAdd, function(err, createdNode) {
+
+                        callback(err, createdNode);
+                    });
+                },
+                function(createdNode, callback) {
+
+                    var propertyName = 'binaryProperty';
+                    options.path = options.path + '/' + propertyName;
+                    var npath = require('path');
+                    var propertyStream = fs.createReadStream(__dirname + '/fixtures/files/binaryTest.txt');
+                    client.createBinaryProperty(options, propertyStream, function(err , result) {
+
+                        result.should.be.an('object');
+                        result.should.have.property(propertyName);
+                        callback(err, createdNode.id);
+                    });
+                },
+                function(nodeId, callback) {
+
+                    options.id = nodeId;
+                    client.deleteNodeByIdentifier(options, function(err, result) {
+                            callback(err, result);
+                    });
+                }
+                ], function(err, result) {
+
+                    result.should.be.empty;
+                    nockDone();
+                    done();
+                }
+            );
+
+
+
+        });
+
     });
 
 });
