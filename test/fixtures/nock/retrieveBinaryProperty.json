@@ -1,0 +1,81 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/items/testbinary",
+        "body": {
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "status": 201,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test/items/testbinary%5b2%5d",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/test/items/",
+            "id": "83625eed-6e9f-494c-8f43-45493b2b385e",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "transfer-encoding": "chunked",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Tue, 31 Mar 2015 17:57:07 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/binary/testbinary/binaryProperty",
+        "body": "hello binary\n",
+        "status": 200,
+        "response": {
+            "binaryProperty": "http://localhost:8080/modeshape-rest/sample/default/binary/testbinary/binaryProperty",
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary/binaryProperty",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "transfer-encoding": "chunked",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Tue, 31 Mar 2015 17:57:07 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "GET",
+        "path": "/modeshape-rest/sample/default/binary/testbinary/binaryProperty?mimeType=text%2Fplain",
+        "body": "",
+        "status": 200,
+        "response": "hello binary\n",
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "text/plain",
+            "content-length": "13",
+            "content-disposition": "attachment;filename=testbinary",
+            "date": "Tue, 31 Mar 2015 17:57:07 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "DELETE",
+        "path": "/modeshape-rest/sample/default/nodes/83625eed-6e9f-494c-8f43-45493b2b385e?mimeType=text%2Fplain",
+        "body": "",
+        "status": 204,
+        "response": "",
+        "headers": {
+            "expires": "0",
+            "connection": "keep-alive",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-length": "0",
+            "date": "Tue, 31 Mar 2015 17:57:07 GMT"
+        }
+    }
+]

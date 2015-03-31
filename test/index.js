@@ -516,4 +516,84 @@ describe('Modeshape available endpoints', function() {
 
     });
 
+
+    it('should retrieve a binary property', function(done) {
+
+        nockBack('retrieveBinaryProperty.json', function(nockDone) {
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: '/testbinary'
+            };
+
+            var nodeToAdd = {
+                "jcr:primaryType":"nt:unstructured"
+            };
+
+
+
+
+            async.waterfall([
+                function(callback){
+
+                    client.addNode(options, nodeToAdd, function(err, createdNode) {
+
+                        callback(err, createdNode);
+                    });
+                },
+                function(createdNode, callback) {
+
+                    var propertyName = 'binaryProperty';
+                    options.path = options.path + '/' + propertyName;
+                    var npath = require('path');
+                    var propertyStream = fs.createReadStream(__dirname + '/fixtures/files/binaryTest.txt');
+                    client.createBinaryProperty(options, propertyStream, function(err , result) {
+
+                        result.should.be.an('object');
+                        result.should.have.property(propertyName);
+                        options.id = createdNode.id
+                        callback(err);
+                    });
+                },
+                function(callback) {
+
+                    options.queryString = {
+                        mimeType: 'text/plain'
+                    };
+
+                    client.getBinaryProperty(options, function(err, resultStream) {
+                        
+                        var body = '';
+
+                        resultStream.on('data', function(chunk) {
+
+                            body = body + chunk;
+                        });
+
+                        resultStream.on('end', function() {
+
+                            body.should.contain('hello binary');
+                            callback(err);
+                        });
+
+                    });
+                },
+                function(callback) {
+
+
+                    client.deleteNodeByIdentifier(options, function(err, result) {
+                            callback(err, result);
+                    });
+                }
+                ], function(err, result) {
+
+                    result.should.be.empty;
+                    nockDone();
+                    done();
+                }
+            );
+
+        });
+    });
+
 });
