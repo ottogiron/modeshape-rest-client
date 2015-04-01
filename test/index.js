@@ -457,7 +457,7 @@ describe('Modeshape available endpoints', function() {
     });
 
 
-    it('it should create a new binary property', function(done) {
+    it('it should create a new binary property via request content', function(done) {
 
         nockBack('createBynaryProperty.json', function(nockDone) {
 
@@ -487,7 +487,7 @@ describe('Modeshape available endpoints', function() {
                     var propertyName = 'binaryProperty';
                     options.path = options.path + '/' + propertyName;
                     var npath = require('path');
-                    var propertyStream = fs.createReadStream(__dirname + '/fixtures/files/binaryTest.txt');
+                    var propertyStream = fs.createReadStream(__dirname + '/fixtures/files/binaryTest');
                     client.createBinaryProperty(options, propertyStream, function(err , result) {
 
                         result.should.be.an('object');
@@ -546,7 +546,7 @@ describe('Modeshape available endpoints', function() {
                     var propertyName = 'binaryProperty';
                     options.path = options.path + '/' + propertyName;
                     var npath = require('path');
-                    var propertyStream = fs.createReadStream(__dirname + '/fixtures/files/binaryTest.txt');
+                    var propertyStream = fs.createReadStream(__dirname + '/fixtures/files/binaryTest');
                     client.createBinaryProperty(options, propertyStream, function(err , result) {
 
                         result.should.be.an('object');
@@ -562,7 +562,7 @@ describe('Modeshape available endpoints', function() {
                     };
 
                     client.getBinaryProperty(options, function(err, resultStream) {
-                        
+
                         var body = '';
 
                         resultStream.on('data', function(chunk) {
@@ -594,6 +594,72 @@ describe('Modeshape available endpoints', function() {
             );
 
         });
+    });
+
+
+    it('should update a binary property via request content', function(done) {
+
+                nockBack('updateBinaryProperty.json', function(nockDone) {
+                    var options = {
+                        repository: TEST_REPOSITORY,
+                        workspace: TEST_WORKSPACE,
+                        path: '/testbinary'
+                    };
+
+                    var nodeToAdd = {
+                        "jcr:primaryType":"nt:unstructured"
+                    };
+
+                    var propertyName = 'binaryProperty';
+                    async.waterfall([
+                        function(callback){
+
+                            client.addNode(options, nodeToAdd, function(err, createdNode) {
+
+                                callback(err, createdNode);
+                            });
+                        },
+                        function(createdNode, callback) {
+
+
+                            options.path = options.path + '/' + propertyName;
+                            var npath = require('path');
+                            var propertyStream = fs.createReadStream(__dirname + '/fixtures/files/binaryTest');
+                            client.createBinaryProperty(options, propertyStream, function(err , result) {
+
+                                result.should.be.an('object');
+                                result.should.have.property(propertyName);
+                                options.id = createdNode.id
+                                callback(err);
+                            });
+                        },
+                        function(callback) {
+
+                            var propertyUpdateStream = fs.createReadStream(__dirname + '/fixtures/files/binaryUpdateTest');
+                            client.updateBinaryProperty(options, propertyUpdateStream, function(err, result) {
+                                result.should.be.an('object');
+                                result.should.have.property(propertyName);
+                                callback(err);
+                            });
+
+                        },
+                        function(callback) {
+
+
+                            client.deleteNodeByIdentifier(options, function(err, result) {
+                                    callback(err, result);
+                            });
+                        }
+                        ], function(err, result) {
+
+                            result.should.be.empty;
+                            nockDone();
+                            done();
+                        }
+                    );
+
+                });
+
     });
 
 });
