@@ -192,7 +192,7 @@ describe('Modeshape available endpoints', function() {
                 function(callback) {
 
                     client.addNode(options, nodeToAdd, function(err, res) {
-                        callback(err, res)
+                        return callback(err, res)
                     });
                 },
                 //retrieve node with created node id
@@ -203,14 +203,14 @@ describe('Modeshape available endpoints', function() {
 
                         retrievedNode.should.be.an('object');
                         retrievedNode.id.should.be.equal(options.id);
-                        callback(err);
+                        return callback(err);
                     });
                 },
                 //delete created node
                 function(callback) {
 
                     client.deleteNodeByIdentifier(options, function(err, res) {
-                        callback(err, res);
+                        return callback(err, res);
                     });
                 }
             ], function(err, result) {
@@ -241,7 +241,7 @@ describe('Modeshape available endpoints', function() {
                 function(callback) {
 
                     client.addNode(options, nodeToAdd, function(err, res) {
-                        callback(err, res)
+                        return callback(err, res)
                     });
                 },
                 //retrieve node with created node id
@@ -261,7 +261,7 @@ describe('Modeshape available endpoints', function() {
                 function(callback) {
 
                     client.deleteNodeByIdentifier(options, function(err, res) {
-                        callback(err, res);
+                        return callback(err, res);
                     });
                 }
             ], function(err, result) {
@@ -395,7 +395,7 @@ describe('Modeshape available endpoints', function() {
                 function(callback) {
 
                     client.addNode(options, nodeToAdd, function(err, res) {
-                        callback(err, res)
+                        return callback(err, res)
                     });
                 },
                 //retrieve node with created node id
@@ -422,7 +422,7 @@ describe('Modeshape available endpoints', function() {
                 function(callback) {
 
                     client.deleteNodeByIdentifier(options, function(err, res) {
-                        callback(err, res);
+                        return callback(err, res);
                     });
                 }
             ], function(err, result) {
@@ -479,7 +479,7 @@ describe('Modeshape available endpoints', function() {
 
                     client.addNode(options, nodeToAdd, function(err, createdNode) {
 
-                        callback(err, createdNode);
+                        return callback(err, createdNode);
                     });
                 },
                 function(createdNode, callback) {
@@ -492,14 +492,14 @@ describe('Modeshape available endpoints', function() {
 
                         result.should.be.an('object');
                         result.should.have.property(propertyName);
-                        callback(err, createdNode.id);
+                        return callback(err, createdNode.id);
                     });
                 },
                 function(nodeId, callback) {
 
                     options.id = nodeId;
                     client.deleteNodeByIdentifier(options, function(err, result) {
-                            callback(err, result);
+                            return callback(err, result);
                     });
                 }
                 ], function(err, result) {
@@ -538,7 +538,7 @@ describe('Modeshape available endpoints', function() {
 
                     client.addNode(options, nodeToAdd, function(err, createdNode) {
 
-                        callback(err, createdNode);
+                        return callback(err, createdNode);
                     });
                 },
                 function(createdNode, callback) {
@@ -552,7 +552,7 @@ describe('Modeshape available endpoints', function() {
                         result.should.be.an('object');
                         result.should.have.property(propertyName);
                         options.id = createdNode.id
-                        callback(err);
+                        return callback(err);
                     });
                 },
                 function(callback) {
@@ -573,7 +573,7 @@ describe('Modeshape available endpoints', function() {
                         resultStream.on('end', function() {
 
                             body.should.contain('hello binary');
-                            callback(err);
+                            return callback(err);
                         });
 
                     });
@@ -582,7 +582,7 @@ describe('Modeshape available endpoints', function() {
 
 
                     client.deleteNodeByIdentifier(options, function(err, result) {
-                            callback(err, result);
+                            return callback(err, result);
                     });
                 }
                 ], function(err, result) {
@@ -616,7 +616,7 @@ describe('Modeshape available endpoints', function() {
 
                             client.addNode(options, nodeToAdd, function(err, createdNode) {
 
-                                callback(err, createdNode);
+                                return callback(err, createdNode);
                             });
                         },
                         function(createdNode, callback) {
@@ -630,7 +630,7 @@ describe('Modeshape available endpoints', function() {
                                 result.should.be.an('object');
                                 result.should.have.property(propertyName);
                                 options.id = createdNode.id
-                                callback(err);
+                                return callback(err);
                             });
                         },
                         function(callback) {
@@ -639,7 +639,7 @@ describe('Modeshape available endpoints', function() {
                             client.updateBinaryProperty(options, propertyUpdateStream, function(err, result) {
                                 result.should.be.an('object');
                                 result.should.have.property(propertyName);
-                                callback(err);
+                                return callback(err);
                             });
 
                         },
@@ -647,7 +647,7 @@ describe('Modeshape available endpoints', function() {
 
 
                             client.deleteNodeByIdentifier(options, function(err, result) {
-                                    callback(err, result);
+                                    return callback(err, result);
                             });
                         }
                         ], function(err, result) {
@@ -659,7 +659,46 @@ describe('Modeshape available endpoints', function() {
                     );
 
                 });
+    });
 
+
+    it('should upload a binary', function(done){
+
+        nockBack('uploadBinary.json', function(nockDone) {
+
+            var options = {
+                repository: TEST_REPOSITORY,
+                workspace: TEST_WORKSPACE,
+                path: '/testbinaryUpload'
+            };
+
+
+            var propertyName = 'binaryProperty';
+            async.waterfall([
+                function(callback) {
+
+                    var nodeStream = fs.createReadStream(__dirname + '/fixtures/files/binaryTest');
+                    client.uploadBinary(options, nodeStream, function(err , result) {
+                        result.should.be.an('object');
+                        result.should.have.property('jcr:data');
+                        return callback(err);
+                    });
+                },
+                function(callback) {
+
+                    client.deleteNode(options, function(err, result) {
+
+                         return callback(err, result);
+                    });
+                }
+                ], function(err, result) {
+
+                    result.should.be.empty;
+                    nockDone();
+                    done();
+                }
+            );
+        });
     });
 
 });

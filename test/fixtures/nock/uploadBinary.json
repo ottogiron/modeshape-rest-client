@@ -1,0 +1,38 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "POST",
+        "path": "/modeshape-rest/sample/default/upload/testbinaryUpload",
+        "body": "hello binary\n",
+        "status": 200,
+        "response": {
+            "jcr:data": "http://localhost:8080/modeshape-rest/sample/default/upload/test/binary/testbinaryUpload/jcr%3acontent/jcr%3adata",
+            "self": "http://localhost:8080/modeshape-rest/sample/default/upload/test/items/testbinaryUpload/jcr%3acontent/jcr%3adata",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/upload/test/items/testbinaryUpload/jcr%3acontent"
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Wed, 01 Apr 2015 22:06:42 GMT"
+        }
+    },
+    {
+        "scope": "http://localhost:8080",
+        "method": "DELETE",
+        "path": "/modeshape-rest/sample/default/items/testbinaryUpload",
+        "body": "",
+        "status": 204,
+        "response": "",
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-length": "0",
+            "date": "Wed, 01 Apr 2015 22:06:42 GMT"
+        }
+    }
+]
