@@ -24,33 +24,33 @@ describe('Modeshape available endpoints', function() {
     });
 
 
-    // it('should retreive a list of available repositories', function(done) {
-    //
-    //     nockBack('getAvailableRepositories.json', function(nockDone) {
-    //
-    //         client.getAvailableRepositories(function(err, result) {
-    //             result.should.be.an('object');
-    //             result.should.have.property('repositories');
-    //             nockDone();
-    //             done();
-    //         });
-    //     });
-    // });
-    //
-    //
-    // it('should retrieve a list of workspaces for a repository', function(done) {
-    //
-    //     nockBack('getListOfWorkspacesForRepository.json', function(nockDone) {
-    //
-    //         var repositoryName = 'sample';
-    //         client.getWorskpaceList(repositoryName, function(err, result){
-    //             result.should.be.an('object');
-    //             result.should.have.property('workspaces');
-    //             nockDone();
-    //             done();
-    //         });
-    //     });
-    // });
+    it('should retreive a list of available repositories', function(done) {
+
+        nockBack('getAvailableRepositories.json', function(nockDone) {
+
+            client.getAvailableRepositories(function(err, result) {
+                result.should.be.an('object');
+                result.should.have.property('repositories');
+                nockDone();
+                done();
+            });
+        });
+    });
+
+
+    it('should retrieve a list of workspaces for a repository', function(done) {
+
+        nockBack('getListOfWorkspacesForRepository.json', function(nockDone) {
+
+            var repositoryName = 'sample';
+            client.getWorskpaceList(repositoryName, function(err, result){
+                result.should.be.an('object');
+                result.should.have.property('workspaces');
+                nockDone();
+                done();
+            });
+        });
+    });
 
 
     it('should add a new node given a path', function(done) {
@@ -293,7 +293,7 @@ describe('Modeshape available endpoints', function() {
         nockBack('getNodesSQL2WithLimitAndOffset.json', function(nockDone) {
 
             var limit = 2;
-            var options = {            
+            var options = {
                 query: "SELECT * FROM [nt:base] WHERE isdescendantnode('/')",
                 queryType: 'sql2',
                 filters: {
