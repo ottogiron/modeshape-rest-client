@@ -8,19 +8,18 @@
         },
         "status": 201,
         "response": {
-            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test/items/testbinary%5b2%5d",
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/test/items/testbinary%5b18%5d",
             "up": "http://localhost:8080/modeshape-rest/sample/default/items/test/items/",
-            "id": "83625eed-6e9f-494c-8f43-45493b2b385e",
+            "id": "c40b4226-678c-440b-9dfe-e38c9769c608",
             "jcr:primaryType": "nt:unstructured"
         },
         "headers": {
             "expires": "0",
-            "connection": "keep-alive",
+            "connection": "close",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
-            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Tue, 31 Mar 2015 17:57:07 GMT"
+            "date": "Thu, 09 Apr 2015 05:51:48 GMT"
         }
     },
     {
@@ -36,12 +35,11 @@
         },
         "headers": {
             "expires": "0",
-            "connection": "keep-alive",
+            "connection": "close",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
-            "transfer-encoding": "chunked",
             "content-type": "application/json;charset=utf-8",
-            "date": "Tue, 31 Mar 2015 17:57:07 GMT"
+            "date": "Thu, 09 Apr 2015 05:51:48 GMT"
         }
     },
     {
@@ -53,29 +51,29 @@
         "response": "hello binary\n",
         "headers": {
             "expires": "0",
-            "connection": "keep-alive",
+            "connection": "close",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-type": "text/plain",
             "content-length": "13",
             "content-disposition": "attachment;filename=testbinary",
-            "date": "Tue, 31 Mar 2015 17:57:07 GMT"
+            "date": "Thu, 09 Apr 2015 05:51:48 GMT"
         }
     },
     {
         "scope": "http://localhost:8080",
         "method": "DELETE",
-        "path": "/modeshape-rest/sample/default/nodes/83625eed-6e9f-494c-8f43-45493b2b385e?mimeType=text%2Fplain",
+        "path": "/modeshape-rest/sample/default/nodes/c40b4226-678c-440b-9dfe-e38c9769c608",
         "body": "",
         "status": 204,
         "response": "",
         "headers": {
             "expires": "0",
-            "connection": "keep-alive",
+            "connection": "close",
             "cache-control": "no-cache, no-store, must-revalidate",
             "pragma": "no-cache",
             "content-length": "0",
-            "date": "Tue, 31 Mar 2015 17:57:07 GMT"
+            "date": "Thu, 09 Apr 2015 05:51:48 GMT"
         }
     }
 ]

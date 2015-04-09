@@ -23,33 +23,33 @@ describe('Modeshape available endpoints', function() {
     });
 
 
-    it('should retreive a list of available repositories', function(done) {
-
-        nockBack('getAvailableRepositories.json', function(nockDone) {
-
-            client.getAvailableRepositories(function(err, result) {
-                result.should.be.an('object');
-                result.should.have.property('repositories');
-                nockDone();
-                done();
-            });
-        });
-    });
-
-
-    it('should retrieve a list of workspaces for a repository', function(done) {
-
-        nockBack('getListOfWorkspacesForRepository.json', function(nockDone) {
-
-            var repositoryName = 'sample';
-            client.getWorskpaceList(repositoryName, function(err, result){
-                result.should.be.an('object');
-                result.should.have.property('workspaces');
-                nockDone();
-                done();
-            });
-        });
-    });
+    // it('should retreive a list of available repositories', function(done) {
+    //
+    //     nockBack('getAvailableRepositories.json', function(nockDone) {
+    //
+    //         client.getAvailableRepositories(function(err, result) {
+    //             result.should.be.an('object');
+    //             result.should.have.property('repositories');
+    //             nockDone();
+    //             done();
+    //         });
+    //     });
+    // });
+    //
+    //
+    // it('should retrieve a list of workspaces for a repository', function(done) {
+    //
+    //     nockBack('getListOfWorkspacesForRepository.json', function(nockDone) {
+    //
+    //         var repositoryName = 'sample';
+    //         client.getWorskpaceList(repositoryName, function(err, result){
+    //             result.should.be.an('object');
+    //             result.should.have.property('workspaces');
+    //             nockDone();
+    //             done();
+    //         });
+    //     });
+    // });
 
 
     it('should add a new node given a path', function(done) {
@@ -69,8 +69,6 @@ describe('Modeshape available endpoints', function() {
 
             var path = '/test';
             client.addNode({
-                    repository: TEST_REPOSITORY,
-                    workspace: TEST_WORKSPACE,
                     path: path
                 }, nodeToAdd, function(err, result) {
 
@@ -93,8 +91,6 @@ describe('Modeshape available endpoints', function() {
 
             var path = 'test';
             client.updateNode({
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 path: path
             }, nodeProperties, function(err, result) {
             //    console.log(result);
@@ -125,8 +121,6 @@ describe('Modeshape available endpoints', function() {
 
             var path = '/testdelete';
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 path: path
             };
 
@@ -153,8 +147,6 @@ describe('Modeshape available endpoints', function() {
             };
 
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 path: '/testdeletebyidentifier'
             };
 
@@ -182,8 +174,6 @@ describe('Modeshape available endpoints', function() {
             };
 
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 path: '/testbyidentifier'
             };
 
@@ -231,8 +221,6 @@ describe('Modeshape available endpoints', function() {
             };
 
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 path: '/testbyidentifier'
             };
 
@@ -281,8 +269,6 @@ describe('Modeshape available endpoints', function() {
         nockBack('getRootNodeSQL2.json', function(nockDone) {
 
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 query: "SELECT * FROM [nt:base] WHERE PATH([nt:base]) ='/'",
                 queryType: 'sql2'
             };
@@ -355,14 +341,11 @@ describe('Modeshape available endpoints', function() {
             }
         };
 
-        var options = {
-            repository: TEST_REPOSITORY,
-            workspace: TEST_WORKSPACE
-        };
+
 
         nockBack('addMultipleNodesSingleSession.json', function(nockDone) {
 
-            client.addMultipleNodes(options, nodesToAdd, function(err, result) {
+            client.addMultipleNodes( nodesToAdd, function(err, result) {
 
                 result.should.be.an('array');
                 result.should.have.length(3);
@@ -385,8 +368,6 @@ describe('Modeshape available endpoints', function() {
             };
 
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 path: testPath
             };
 
@@ -442,8 +423,6 @@ describe('Modeshape available endpoints', function() {
         nockBack('getNodeType.json', function(nockDone) {
             var nodeTypeName = 'nt:base';
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 nodeTypeName: nodeTypeName
             };
 
@@ -462,8 +441,6 @@ describe('Modeshape available endpoints', function() {
         nockBack('createBynaryProperty.json', function(nockDone) {
 
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 path: '/testbinary'
             };
 
@@ -521,8 +498,7 @@ describe('Modeshape available endpoints', function() {
 
         nockBack('retrieveBinaryProperty.json', function(nockDone) {
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
+    
                 path: '/testbinary'
             };
 
@@ -601,8 +577,6 @@ describe('Modeshape available endpoints', function() {
 
                 nockBack('updateBinaryProperty.json', function(nockDone) {
                     var options = {
-                        repository: TEST_REPOSITORY,
-                        workspace: TEST_WORKSPACE,
                         path: '/testbinary'
                     };
 
@@ -667,8 +641,6 @@ describe('Modeshape available endpoints', function() {
         nockBack('uploadBinary.json', function(nockDone) {
 
             var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
                 path: '/testbinaryUpload'
             };
 
