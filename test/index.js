@@ -8,8 +8,7 @@ nockBack.fixtures = './test/fixtures/nock';
 nockBack.setMode('record');
 
 
-var TEST_REPOSITORY = 'sample';
-var TEST_WORKSPACE = 'default'
+
 
 describe('Modeshape available endpoints', function() {
 
@@ -18,7 +17,9 @@ describe('Modeshape available endpoints', function() {
     before(function(){
         client = modeshapeRestClient({
             user: 'admin',
-            password: 'admin'
+            password: 'admin',
+            repository: 'sample',
+            workspace: 'default'
         });
     });
 
@@ -292,9 +293,7 @@ describe('Modeshape available endpoints', function() {
         nockBack('getNodesSQL2WithLimitAndOffset.json', function(nockDone) {
 
             var limit = 2;
-            var options = {
-                repository: TEST_REPOSITORY,
-                workspace: TEST_WORKSPACE,
+            var options = {            
                 query: "SELECT * FROM [nt:base] WHERE isdescendantnode('/')",
                 queryType: 'sql2',
                 filters: {
@@ -498,7 +497,7 @@ describe('Modeshape available endpoints', function() {
 
         nockBack('retrieveBinaryProperty.json', function(nockDone) {
             var options = {
-    
+
                 path: '/testbinary'
             };
 
