@@ -71,6 +71,26 @@ describe('Modeshape available endpoints', function() {
     });
 
 
+    it('should retrieve a node given a path and child depth', function(done) {
+
+        nockBack('getANodeOrPropertyByPathAndDepth.json', function(nockDone) {
+
+            client.getNode({
+                path: '/',
+                depth: 10
+                
+            }, function(err, result){
+
+                result.should.be.an('object');
+                result.should.have.property('id');
+                result.should.have.property('children');
+                nockDone();
+                done();
+            });
+        });
+    });
+
+
     it('should add a new node given a path', function(done) {
 
         var nodeToAdd = {
