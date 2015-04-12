@@ -1,0 +1,171 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "GET",
+        "path": "/modeshape-rest/sample/default/items/",
+        "body": "",
+        "status": 200,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "up": "http://localhost:8080/modeshape-rest/sample",
+            "id": "/",
+            "jcr:primaryType": "mode:root",
+            "jcr:uuid": "81513257505d64/",
+            "children": {
+                "jcr:system": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "8151325317f1e7jcr:system"
+                },
+                "test": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/test",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "a7ece097-3900-47b9-8e2a-9212e20aaa09"
+                },
+                "test[2]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b2%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "44548a1b-9a08-42e5-8257-3cce36f26a6c"
+                },
+                "testbyidentifier": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "147e8ba2-3405-48a6-bbb7-78d3ce502ecc"
+                },
+                "testbyidentifier[2]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b2%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "d4a83851-42bf-4d5a-881a-a3969bd9df95"
+                },
+                "testbyidentifier[3]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b3%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "da94f17c-1ad4-4868-80ec-0ad9ad2aa58e"
+                },
+                "testbyidentifier[4]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b4%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "e2694fde-c2df-474f-bd48-b23823454d53"
+                },
+                "testbyidentifier[5]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b5%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "efa08830-ae64-4ce3-bc92-be701d51faae"
+                },
+                "testbyidentifier[6]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b6%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "57f60075-b639-4ce4-b3aa-e962b8467756"
+                },
+                "testbyidentifier[7]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbyidentifier%5b7%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "4e9ffed3-8187-4358-a40b-4cb7a97b5141"
+                },
+                "test[3]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/test%5b3%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "5970dfd4-9153-432e-a3d8-10db1796e6e6"
+                },
+                "testdelete": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testdelete",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "56976220-7880-4d1c-9d94-44f8759a484d"
+                },
+                "testbinary": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "67e82f43-b58b-48ff-94dd-46cd92126a96"
+                },
+                "testbinary[2]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b2%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "398c65c1-0eb3-4ad1-b01c-8a6d656ee9a3"
+                },
+                "testbinary[3]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b3%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "3d7288fe-4d42-43eb-96d5-45bff3f03cc4"
+                },
+                "testbinary[4]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b4%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "d8782361-8827-490e-9105-6c0b6e974daa"
+                },
+                "testbinary[5]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b5%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "3eb145ec-ca46-4185-8dfb-6ca6d0b6a4de"
+                },
+                "testbinary[6]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b6%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "8bd91ad4-fd72-4762-a5e9-24666049ae25"
+                },
+                "testbinary[7]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b7%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "40e1ffaa-b8b7-4984-a7a2-e85f0b13ceaa"
+                },
+                "testbinary[8]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b8%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "e611295c-0123-48ca-9147-25644f827b49"
+                },
+                "testbinary[9]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b9%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "0b134c32-23b8-464b-8184-d1a7a96f8826"
+                },
+                "testbinary[10]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b10%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "1776c1b9-b0fc-4775-b41e-cfc549c3e219"
+                },
+                "testbinary[11]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b11%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "7e367f7f-d557-4faa-af61-426bea6c41c6"
+                },
+                "testbinary[12]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b12%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "8bb53343-a76f-410b-93db-2f3b1110af49"
+                },
+                "testbinary[13]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b13%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "a63351ac-797c-44e8-91e7-efa21233f4a7"
+                },
+                "testbinary[14]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b14%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "53effd54-8d01-4e76-a873-34316d68a23d"
+                },
+                "testbinary[15]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b15%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "a52bdcc6-8907-4d58-8abf-df04f8ab81ad"
+                },
+                "testbinary[16]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b16%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "f23b11ad-e79f-4dff-8a6a-1f1e02da274f"
+                },
+                "testbinary[17]": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/testbinary%5b17%5d",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+                    "id": "8bc61680-d0e6-43e7-b9e3-5f22814cf9da"
+                }
+            }
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Sun, 12 Apr 2015 00:39:51 GMT"
+        }
+    }
+]

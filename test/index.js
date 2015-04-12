@@ -1,6 +1,6 @@
 require('chai').should();
 var nockBack = require('nock').back;
-var modeshapeRestClient = require('../');
+var ModeShapeRestClient = require('../');
 var async = require('async');
 var fs = require('fs');
 
@@ -15,7 +15,7 @@ describe('Modeshape available endpoints', function() {
     var client;
 
     before(function(){
-        client = modeshapeRestClient({
+        client = ModeShapeRestClient({
             user: 'admin',
             password: 'admin',
             repository: 'sample',
@@ -78,7 +78,7 @@ describe('Modeshape available endpoints', function() {
             client.getNode({
                 path: '/',
                 depth: 10
-                
+
             }, function(err, result){
 
                 result.should.be.an('object');
@@ -707,6 +707,39 @@ describe('Modeshape available endpoints', function() {
                     done();
                 }
             );
+        });
+    });
+
+
+    it('shoud get the path for a returned node data', function(done){
+
+        nockBack('getNodeDataPath.json', function(nockdone) {
+
+            var path = '/';
+            client.getNode({path: path}, function(err, nodeData){
+
+                var nodeDataPath = client.getPath(nodeData);
+                nodeDataPath.should.be.equal(path);
+                nockdone();
+                done();
+            });
+        });
+    });
+
+
+    it('shoud get the parent path for a returned node data', function(done){
+
+        nockBack('getNodeDataParentPath.json', function(nockdone) {
+
+            var path = '/jcr:system';
+            var parentPath = '/';
+            client.getNode({path: path}, function(err, nodeData){
+
+                var nodeDataPath = client.getParentPath(nodeData);
+                nodeDataPath.should.be.equal(parentPath);
+                nockdone();
+                done();
+            });
         });
     });
 
