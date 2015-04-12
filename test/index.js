@@ -743,4 +743,36 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+
+    it('shoud get the node name from the node data', function(done){
+
+        nockBack('getNodeNameFromNodeData.json', function(nockdone) {
+
+            var path = '/jcr:system';
+            client.getNode({path: path}, function(err, nodeData){
+
+                var nodeName = client.getName(nodeData);
+                nodeName.should.be.equal('jcr:system');
+                nockdone();
+                done();
+            });
+        });
+    });
+
+
+    it('shoud get the node identifier from the node data', function(done){
+
+        nockBack('getNodeIdentifierFromNodeData.json', function(nockdone) {
+
+            var path = '/jcr:system';
+            client.getNode({path: path}, function(err, nodeData){
+
+                var identifier = client.getIdentifier(nodeData);
+                identifier.should.be.equal(nodeData.id);
+                nockdone();
+                done();
+            });
+        });
+    });
+
 });

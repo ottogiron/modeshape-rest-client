@@ -1,0 +1,55 @@
+[
+    {
+        "scope": "http://localhost:8080",
+        "method": "GET",
+        "path": "/modeshape-rest/sample/default/items/jcr:system",
+        "body": "",
+        "status": 200,
+        "response": {
+            "self": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem",
+            "up": "http://localhost:8080/modeshape-rest/sample/default/items/",
+            "id": "8151325317f1e7jcr:system",
+            "jcr:primaryType": "mode:system",
+            "children": {
+                "jcr:nodeTypes": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem/jcr%3anodeTypes",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem",
+                    "id": "8151325317f1e7jcr:nodeTypes"
+                },
+                "jcr:versionStorage": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem/jcr%3aversionStorage",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem",
+                    "id": "8151325317f1e7jcr:versionStorage"
+                },
+                "mode:namespaces": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem/mode%3anamespaces",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem",
+                    "id": "8151325317f1e7mode:namespaces"
+                },
+                "mode:locks": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem/mode%3alocks",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem",
+                    "id": "8151325317f1e7mode:locks"
+                },
+                "mode:indexes": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem/mode%3aindexes",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem",
+                    "id": "8151325317f1e7mode:indexes"
+                },
+                "mode:repository": {
+                    "self": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem/mode%3arepository",
+                    "up": "http://localhost:8080/modeshape-rest/sample/default/items/jcr%3asystem",
+                    "id": "8151325317f1e7mode:repository"
+                }
+            }
+        },
+        "headers": {
+            "expires": "0",
+            "connection": "close",
+            "cache-control": "no-cache, no-store, must-revalidate",
+            "pragma": "no-cache",
+            "content-type": "application/json;charset=utf-8",
+            "date": "Sun, 12 Apr 2015 02:16:41 GMT"
+        }
+    }
+]
