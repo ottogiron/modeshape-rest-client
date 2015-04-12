@@ -775,4 +775,43 @@ describe('Modeshape available endpoints', function() {
         });
     });
 
+
+    it('should return a node data children which already contains a children object', function(done){
+
+        nockBack('getCachedChildren.json', function(nockdone){
+
+            var path = '/';
+            client.getNode({ path: path}, function(err, nodeData) {
+
+                client.getChildren(nodeData, function(err, children) {
+
+                    children.should.be.an('object');
+                    children.should.have.property('jcr:system');
+                    nockdone();
+                    done();
+                });
+            });
+        });
+    });
+
+
+    it('should return a node data children which does not contains a children object', function(done){
+
+        nockBack('getNonCachedChildren.json', function(nockdone){
+
+            var path = '/';
+            client.getNode({ path: path}, function(err, nodeData) {
+
+                var jcrSystemNodeData = nodeData.children['jcr:system'];
+                client.getChildren(jcrSystemNodeData, function(err, children) {
+
+                    children.should.be.an('object');
+                    children.should.have.property('jcr:nodeTypes');
+                    nockdone();
+                    done();
+                });
+            });
+        });
+    });
+
 });
